@@ -3,7 +3,7 @@
 # -----------------
 # SYNOPSIS: 04-FileDiff.sh [File1] [file2]
 # Description: Das Script überprüft die Zeilen zweier definierten Dokumenten.
-# Das unterschiedliche File heisst diff.txt.
+# Die unterschiedlichen Zeilen werden gekennzeoichnet und die Anzahl unterschiedlichen Zeilen ausgegeben.
 #
 # 04-FileDiff.sh file1 file2
 # file1: Ist das erste Dokument
