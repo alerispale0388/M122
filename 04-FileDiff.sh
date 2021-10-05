@@ -5,20 +5,19 @@
 # Description: Das Script überprüft die Zeilen zweier definierten Dokumenten.
 # Die unterschiedlichen Zeilen werden gekennzeoichnet und die Anzahl unterschiedlichen Zeilen ausgegeben.
 #
-# 04-FileDiff.sh file1 file2
-# file1: Ist das erste Dokument
-# file2: Ist das zweite Dokument
+# 04-FileDiff.sh file1 file2 um das Skript laufen zu lassen
+# file1 und file2 sind die files, die verglichen werden
 #
 # Autor: Alessio Rispoli
 # Datum: 02.10.2021
 
-echo "Dokument 1: $1"
-echo "Dokument 2: $2"
+echo "Document 1: $1"
+echo "Document 2: $2"
 echo ""
 
 #Überprüfung der Dokumente
 if [[ -f "$1" && -f "$2" ]]; then
-  echo "Zeilenausgabe:"
+  echo "Print row:"
   # Variablen setzen, welches Dokument hat mehr Zeilen
   if [[ $(wc -l < "$1") -gt $(wc -l < "$2") ]];
   then
@@ -29,8 +28,8 @@ if [[ -f "$1" && -f "$2" ]]; then
     smallerFile=$1
   fi
 
-  #Zeilenanzahl aus dem grösseren Dokument. +1 weil die Länge bei 0 beginnt.
-  differentRows=0
+  #Zeilenanzahl aus dem grösseren Dokument.
+  amountOfUnequalRows=0
   amountRowsBiggerFile=$(wc -l < "$biggerFile")
 
   #Zeile definiere, bei der das Skript startet
@@ -50,16 +49,17 @@ if [[ -f "$1" && -f "$2" ]]; then
 
     #Überprüfung ob Zeilen unterschiedlich sind
     if [[ "$currentRowBiggerFile" != "$currentRowSmallerFile" ]]; then
-      ((differentRows=differentRows+1))
+      ((amountOfUnequalRows=amountOfUnequalRows+1))
 
-      echo "Zeile $i ungleich"
+      echo "Row $i unequal"
     fi
     ((i=i+1))
   done
 
   echo ""
-  echo "Insgesamt sind $differentRows Zeilen ungleich"
+  echo "In total are $amountOfUnequalRows rows unequal"
+  echo "Script end"
   echo ""
 else
-  echo "Ungültige Dokumentangabe"
+  echo "Invalid documents"
 fi
