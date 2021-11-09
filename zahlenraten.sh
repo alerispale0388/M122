@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
-#
+# Autor: Alessio Rispoli
+# Datum: 05.10.2021
 # Name: Zahlenraten.sh
-# ***************************************
+# 
 # SYNOPSIS: Zahlenrate.sh
 # Ausgeführt in Konsole von IntelliJ
 #
@@ -15,9 +16,6 @@
 # Ist die Eingabe eine Zahl oder nicht
 # Wird wiederholt bis die Zahl erraten wurde oder keine Leben übrig sind
 # Ausgabe ob man gewonnen oder verloren hat
-#
-# Autor: Alessio Rispoli
-# Datum: 05.10.2021
 
 clear
 onlyNumbers='^[0-9]+$'
