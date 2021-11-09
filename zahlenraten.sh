@@ -2,7 +2,7 @@
 # Autor: Alessio Rispoli
 # Datum: 05.10.2021
 # Name: Zahlenraten.sh
-# 
+#
 # SYNOPSIS: Zahlenrate.sh
 # Ausgeführt in Konsole von IntelliJ
 #
